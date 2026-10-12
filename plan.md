@@ -33,38 +33,38 @@ Design notes:
 ## Stages
 
 ### Stage 1: Schema
-- [ ] Write `sql/01_schema.sql` with all four tables, keys, and constraints.
-- [ ] Verify that invalid inserts fail (score 105, duplicate department name, duplicate student-course pair).
+- [ x ] Write `sql/01_schema.sql` with all four tables, keys, and constraints.
+- [ x ] Verify that invalid inserts fail (score 105, duplicate department name, duplicate student-course pair).
 
 ### Stage 2: Seed data
-- [ ] Write `sql/02_seed.sql` with at least 4 departments, 15+ students, 8+ courses, and enough marks to make averages meaningful.
-- [ ] Include a few edge cases on purpose: a student with no marks, a course with no students, a department with no courses.
+- [ x ] Write `sql/02_seed.sql` with at least 4 departments, 15+ students, 8+ courses, and enough marks to make averages meaningful.
+- [ x ] Include a few edge cases on purpose: a student with no marks, a course with no students, a department with no courses.
 
 ### Stage 3: Basic queries
-- [ ] List all students with their department names (INNER JOIN).
-- [ ] List all students, including those with no department, using LEFT JOIN.
-- [ ] Find students with no marks recorded (anti-join with LEFT JOIN ... IS NULL).
-- [ ] Average score per course, with courses having fewer than 3 scores filtered out using HAVING.
+- [ x ] List all students with their department names (INNER JOIN).
+- [ x ] List all students, including those with no department, using LEFT JOIN.
+- [ x ] Find students with no marks recorded (anti-join with LEFT JOIN ... IS NULL).
+- [ x ] Average score per course, with courses having fewer than 3 scores filtered out using HAVING.
 
 ### Stage 4: Intermediate queries
-- [ ] Each student's average score across all courses (GROUP BY).
-- [ ] Students scoring above the overall average (scalar subquery).
-- [ ] Departments that have at least one student scoring above 90 (EXISTS).
+- [ x ] Each student's average score across all courses (GROUP BY).
+- [ x ] Students scoring above the overall average (scalar subquery).
+- [ x ] Departments that have at least one student scoring above 90 (EXISTS).
 
 ### Stage 5: Window functions and CTEs
-- [ ] Rank students by average score within each department using RANK().
-- [ ] Top 2 students per department using ROW_NUMBER() inside a CTE.
-- [ ] Each mark compared with that course's average (AVG() OVER (PARTITION BY course_id)).
-- [ ] Running total of scores per student ordered by course_id.
+- [ x ] Rank students by average score within each department using RANK().
+- [ x ] Top 2 students per department using ROW_NUMBER() inside a CTE.
+- [ x ] Each mark compared with that course's average (AVG() OVER (PARTITION BY course_id)).
+- [ x ] Running total of scores per student ordered by course_id.
 
 ### Stage 6: Views and transactions
-- [ ] Create a view `student_averages` for reuse.
-- [ ] Create a materialized view `department_summary` and practise refreshing it after new marks are added.
-- [ ] Write a transaction that updates a student's score and then rolls back, and verify the result.
+- [ x ] Create a view `student_averages` for reuse.
+- [ x ] Create a materialized view `department_summary` and practise refreshing it after new marks are added.
+- [ x ] Write a transaction that updates a student's score and then rolls back, and verify the result.
 
 ### Stage 7: Reproducibility and docs
-- [ ] Write `sql/00_reset.sql` to drop and recreate everything from scratch.
-- [ ] Put every query from Stages 3 to 5 into `sql/03_queries.sql`, each with a comment that states the question it answers.
+- [ x ] Write `sql/00_reset.sql` to drop and recreate everything from scratch.
+- [ x ] Put every query from Stages 3 to 5 into `sql/03_queries.sql`, each with a comment that states the question it answers.
 - [ ] Write a README covering setup, how to run the scripts, and sample output.
 
 ## Folder structure
